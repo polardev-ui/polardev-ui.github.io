@@ -1,0 +1,309 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+
+  /* Pure black background with white accents */
+  --color-background: 0 0 0;
+  --color-foreground: 255 255 255;
+  --color-card: 10 10 10;
+  --color-card-foreground: 255 255 255;
+  --color-popover: 15 15 15;
+  --color-popover-foreground: 255 255 255;
+  --color-primary: 255 255 255;
+  --color-primary-foreground: 0 0 0;
+  --color-secondary: 30 30 30;
+  --color-secondary-foreground: 255 255 255;
+  --color-muted: 40 40 40;
+  --color-muted-foreground: 200 200 200;
+  --color-accent: 255 255 255;
+  --color-accent-foreground: 0 0 0;
+  --color-destructive: 239 68 68;
+  --color-destructive-foreground: 255 255 255;
+  --color-border: 40 40 40;
+  --color-input: 20 20 20;
+  --color-ring: 255 255 255;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius: 0.625rem;
+  --sidebar: 0 0 0;
+  --sidebar-foreground: 255 255 255;
+  --sidebar-primary: 255 255 255;
+  --sidebar-primary-foreground: 0 0 0;
+  --sidebar-accent: 255 255 255;
+  --sidebar-accent-foreground: 0 0 0;
+  --sidebar-border: 40 40 40;
+  --sidebar-ring: 255 255 255;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+}
+
+.dark {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+
+  /* Dark mode colors */
+  --color-background: 0 0 0;
+  --color-foreground: 255 255 255;
+  --color-card: 15 15 15;
+  --color-card-foreground: 255 255 255;
+  --color-popover: 20 20 20;
+  --color-popover-foreground: 255 255 255;
+  --color-primary: 255 255 255;
+  --color-primary-foreground: 0 0 0;
+  --color-secondary: 35 35 35;
+  --color-secondary-foreground: 255 255 255;
+  --color-muted: 50 50 50;
+  --color-muted-foreground: 200 200 200;
+  --color-accent: 255 255 255;
+  --color-accent-foreground: 0 0 0;
+  --color-destructive: 239 68 68;
+  --color-destructive-foreground: 255 255 255;
+  --color-border: 50 50 50;
+  --color-input: 25 25 25;
+  --color-ring: 255 255 255;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius: 0.625rem;
+  --sidebar: 15 15 15;
+  --sidebar-foreground: 255 255 255;
+  --sidebar-primary: 255 255 255;
+  --sidebar-primary-foreground: 0 0 0;
+  --sidebar-accent: 255 255 255;
+  --sidebar-accent-foreground: 0 0 0;
+  --sidebar-border: 50 50 50;
+  --sidebar-ring: 255 255 255;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Enhanced animations with depth effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.3;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(30px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes letterAppear {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.5) translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Glossy button effects with depth */
+.glossy-button {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(255, 255, 255, 0.1) inset, 0 -2px 8px rgba(0, 0, 0, 0.2)
+    inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glossy-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(255, 255, 255, 0.15) inset,
+    0 -4px 12px rgba(0, 0, 0, 0.3) inset,
+    0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.glossy-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Glass morphism with depth */
+.glass {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(255, 255, 255, 0.05) inset;
+}
+
+.glass-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover:hover {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(15, 15, 15, 0.95) 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(255, 255, 255, 0.08) inset, 0 0 40px
+    rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+/* Scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text with white theme */
+.gradient-text {
+  color: #ffffff !important;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Added letter-animate class for immediate animation on mount */
+.letter-animate {
+  animation: letterAppear 0.4s ease-out forwards;
+  animation-play-state: running;
+}
