@@ -10,6 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-headi
 export const metadata: Metadata = {
   title: "Polar - Fullstack Developer",
   description: "Portfolio of Polar (Josh Clark), a fullstack developer specializing in modern web technologies.",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

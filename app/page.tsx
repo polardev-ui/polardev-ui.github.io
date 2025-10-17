@@ -16,6 +16,7 @@ export default function Home() {
   useEffect(() => {
     setIsLoaded(true)
 
+    // Scroll reveal animation
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px",
